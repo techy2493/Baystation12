@@ -1,6 +1,9 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
+WINDOW: icons\obj\clothing\suits.dmi;code\modules\admin\verbs\playsound.dm
+DIR: code code\modules code\modules\admin code\modules\admin\verbs code\modules\client icons icons\obj icons\obj\clothing 
+FILE: code\modules\admin\verbs\playsound.dm
 AUTO_FILE_DIR: OFF
 */
 // END_INTERNALS
