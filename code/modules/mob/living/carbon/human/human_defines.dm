@@ -26,6 +26,12 @@
 	var/underwear = 1	//Which underwear the player wants
 	var/backbag = 2		//Which backpack type the player has chosen. Nothing, Satchel or Backpack.
 
+	//Cloning Stuffs
+	var/clone_walk = 0
+	var/clone_item = 0
+	var/clone_walk_c = 0
+	var/clone_item_c = 0
+
 	//Equipment slots
 	var/obj/item/wear_suit = null
 	var/obj/item/w_uniform = null

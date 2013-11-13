@@ -130,6 +130,26 @@
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT
 
+//Magistrate
+/obj/item/clothing/suit/magistratecoat
+	name = "Magistrate's Overcoat"
+	desc = "A fine leather overcoat, tailored specifically to the magistrate. "
+	icon_state = "duster"
+	item_state = "duster"
+	flags = FPRINT | TABLEPASS | ONESIZEFITSALL
+	body_parts_covered = ARMS
+	allowed = list(/obj/item/weapon/gun,/obj/item/ammo_magazine,/obj/item/ammo_casing,/obj/item/weapon/melee/baton,/obj/item/weapon/handcuffs,/obj/item/weapon/tank/emergency_oxygen)
+	armor = list(melee = 50, bullet = 40, laser = 50, energy = 30, bomb = 25, bio = 0, rad = 0)
+	min_cold_protection_temperature = SPACE_SUIT_MIN_COLD_PROTECITON_TEMPERATURE
+
+
+/obj/item/clothing/under/rank/magistrate
+	name = "magistrate's uniform"
+	desc = "An expensive gray suit with black dress shirt and tie, perfect for upholding the law."
+	icon_state = "vice"
+	item_state = "gy_suit"
+	#warn Hey, this thing here is color wtf is it for?
+	//color = "vice"
 
 /obj/item/clothing/suit/imperium_monk
 	name = "Imperium monk"

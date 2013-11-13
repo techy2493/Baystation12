@@ -21,6 +21,7 @@
 	var/attempting = 0 //One clone attempt at a time thanks
 	var/eject_wait = 0 //Don't eject them as soon as they are created fuckkk
 	var/biomass = CLONE_BIOMASS * 3
+	var/charges = 0
 
 //The return of data disks?? Just for transferring between genetics machine/cloning machine.
 //TO-DO: Make the genetics machine accept them.
@@ -67,6 +68,28 @@
 			selected = M
 			break
 	return selected
+//Stem Cell Stuff Items
+#warn StemCellStuff
+//TODO: Update Sprite For Cloning Charge
+
+/obj/item/cloning/charge
+	name = "Stem Cell Container"
+	desc = "A container holding stem cells for the cloning process. WARNING! Do not shake!"
+	var/charges = 1
+	icon = 'icons/obj/storage.dmi'
+	icon_state = "stem-charge"
+	#warn NEED DAT ICON UP DERE ^^
+
+/obj/item/cloning/charge/attack_self(mob/user)
+	playsound(src.loc, 'sound/effects/Glassbr3.ogg', 50, 0)
+	for (var/mob/O in viewers(world.view, user))
+		O << "<B>[user]</B> is shaking \the [src], trying to determine if anything is inside."
+		spawn(10)
+		O << "<B>[user]</B> accidentally empties the contents of \the [src] all over the floor!"
+	gibs(src.loc)
+	user << "That was stupid of you..."
+	user.drop_item()
+	Del(src)
 
 //Disk stuff.
 /obj/item/weapon/disk/data/New()
@@ -127,6 +150,9 @@
 	if(clonemind.active)	//somebody is using that mind
 		if( ckey(clonemind.key)!=ckey )
 			return 0
+		if(!charges) // Make sure there are enough stem cell charges
+			src.connected_message("Error: Insuffecient Stem-Cells")
+			return 0
 	else
 		for(var/mob/dead/observer/G in player_list)
 			if(G.ckey == ckey)
@@ -135,7 +161,7 @@
 				else
 					return 0
 
-
+	charges -=1 // Remove one stem cell charge
 	src.heal_level = rand(10,40) //Randomizes what health the clone is when ejected
 	src.attempting = 1 //One at a time!!
 	src.locked = 1
@@ -180,6 +206,11 @@
 
 	// -- End mode specific stuff
 
+	if(prob(5))
+		src.mess = 1
+		src.locked = 1
+		src.go_out()
+
 	if(!H.dna)
 		H.dna = new /datum/dna()
 		H.dna.real_name = H.real_name
@@ -199,6 +230,8 @@
 	H.update_mutantrace()
 	H.suiciding = 0
 	src.attempting = 0
+	H.clone_walk = 1
+	H.clone_item = 1
 	return 1
 
 //Grow clones to maturity then kick them out.  FREELOADERS
@@ -280,8 +313,19 @@
 		user.drop_item()
 		del(W)
 		return
+	else if (istype(W, /obj/item/cloning/charge))
+		var/obj/item/cloning/charge/D = W
+		if(!D.charges)
+			user << "\red Warning:  Container Empty"
+		else
+			user << "\blue <B>[D.charges] added.  [src.charges] total charges."
+			src.charges += D.charges
+			D.charges = null
 	else
 		..()
+
+
+//Add Stem Cell Charges
 
 //Put messages in the connected computer's temp var for display.
 /obj/machinery/clonepod/proc/connected_message(var/message)

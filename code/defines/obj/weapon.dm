@@ -119,6 +119,12 @@
 	item_state = "card-id"
 	w_class = 1.0
 
+/obj/item/weapon/dummy
+	name = "dummy"
+	invisibility = 101.0
+	anchored = 1.0
+	flags = TABLEPASS
+
 /*
 /obj/item/weapon/game_kit
 	name = "Gaming Kit"

@@ -14,7 +14,7 @@
 	var/datum/hud/living/carbon/hud = null // hud
 	var/bootime = 0
 	var/started_as_observer //This variable is set to 1 when you enter the game as an observer.
-							//If you died in the game and are a ghsot - this will remain as null.
+	var/alpha = 127			//If you died in the game and are a ghsot - this will remain as null.
 							//Note that this is not a reliable way to determine if admins started as observers, since they change mobs a lot.
 	universal_speak = 1
 	var/atom/movable/following = null
@@ -38,8 +38,6 @@
 			icon = body.icon
 			icon_state = body.icon_state
 			overlays = body.overlays
-
-		alpha = 127
 
 		gender = body.gender
 		if(body.mind && body.mind.name)

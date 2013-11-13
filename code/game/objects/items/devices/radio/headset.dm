@@ -51,6 +51,28 @@
 	item_state = "headset"
 	keyslot2 = new /obj/item/device/encryptionkey/headset_sec
 
+/obj/item/device/radio/headset/heads/qm
+	name = "quartermaster's headset"
+	desc = "The headset of the man who controls your toiletpaper supply. To access the supply channel, use :u. For command, use :c"
+	icon_state = "cargo_headset"
+	item_state = "headset"
+	keyslot2 = new /obj/item/device/encryptionkey/heads/qm
+
+
+/obj/item/device/radio/headset/heads/magistrate
+	name = "magistrate's headset"
+	desc = "The headset of the magistrate, judge of the station. To access the security channel, use :s. For command, use :c."
+	icon_state = "com_headset"
+	item_state = "headset"
+	keyslot2 = new /obj/item/device/encryptionkey/heads/hos
+
+/obj/item/device/radio/headset/headset_paramedic
+	name = "security paramedic radio headset"
+	desc = "This is used by the security paramedic. To access the security channel, use :s. For medical, use :m."
+	icon_state = "sec_headset"
+	item_state = "headset"
+	keyslot2 = new /obj/item/device/encryptionkey/headset_paramedic
+
 /obj/item/device/radio/headset/headset_eng
 	name = "engineering radio headset"
 	desc = "When the engineers wish to chat like girls. To access the engineering channel, use :e. "

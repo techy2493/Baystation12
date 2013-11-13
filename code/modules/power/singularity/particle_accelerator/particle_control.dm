@@ -135,7 +135,7 @@
 				PE.emit_particle(src.strength)
 	return
 
-
+#warn UPDATE PAC PART SCAN FOR NEW ORIENTATION
 /obj/machinery/particle_accelerator/control_box/proc/part_scan()
 	for(var/obj/structure/particle_accelerator/fuel_chamber/F in orange(1,src))
 		src.dir = F.dir
@@ -145,24 +145,24 @@
 	var/rdir = turn(dir,90)
 	var/odir = turn(dir,180)
 	var/turf/T = src.loc
-	T = get_step(T,rdir)
+	T = get_step(T,dir) //origin rdir
 	if(check_part(T,/obj/structure/particle_accelerator/fuel_chamber))
 		tally++
-	T = get_step(T,odir)
+	T = get_step(T,rdir) // origin odir
 	if(check_part(T,/obj/structure/particle_accelerator/end_cap))
 		tally++
-	T = get_step(T,dir)
-	T = get_step(T,dir)
+	T = get_step(T,ldir) //origin dir
+	T = get_step(T,ldir) //origin dir
 	if(check_part(T,/obj/structure/particle_accelerator/power_box))
 		tally++
-	T = get_step(T,dir)
+	T = get_step(T,ldir) // origin dir
 	if(check_part(T,/obj/structure/particle_accelerator/particle_emitter/center))
 		tally++
-	T = get_step(T,ldir)
+	T = get_step(T,odir) //origin dir
 	if(check_part(T,/obj/structure/particle_accelerator/particle_emitter/left))
 		tally++
-	T = get_step(T,rdir)
-	T = get_step(T,rdir)
+	T = get_step(T,dir) //origin rdir
+	T = get_step(T,dir) //origin rdir
 	if(check_part(T,/obj/structure/particle_accelerator/particle_emitter/right))
 		tally++
 	if(tally >= 6)

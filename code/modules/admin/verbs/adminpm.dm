@@ -40,6 +40,10 @@
 		src << "<font color='red'>Error: Private-Message: You are unable to use PM-s (muted).</font>"
 		return
 
+	if(src.holder.rank == "Donor")
+		src << "<font color='red'>Error: Private-Message: You are unable to use PM-s (Donor).</font>"
+		return
+
 	if(!istype(C,/client))
 		if(holder)	src << "<font color='red'>Error: Private-Message: Client not found.</font>"
 		else		adminhelp(msg)	//admin we are replying to left. adminhelp instead

@@ -96,3 +96,9 @@
 	name = "Scientist Labcoat"
 	desc = "A suit that protects against minor chemical spills. Has a purple stripe on the shoulder."
 	icon_state = "labcoat_tox_open"
+
+/obj/item/clothing/suit/storage/labcoat/armored
+	name = "reinforced labcoat"
+	desc = "A white and red labcoat, reinforced with thick carbon-fibre threads and metal sheets."
+	icon_state = "labcoat_para_open"
+	armor = list(melee = 40, bullet = 10, laser = 50, energy = 10, bomb = 25, bio = 35, rad = 0)

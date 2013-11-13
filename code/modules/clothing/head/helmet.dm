@@ -59,3 +59,12 @@
 	item_state = "gladiator"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES
 	siemens_coefficient = 1
+
+/obj/item/clothing/head/helmet/parahelmet
+	name = "security paramedic's helmet"
+	desc = "A visorless helmet with a medical decal. Don't tase me bro!"
+	icon_state = "parahelmet_s"
+	flags = FPRINT | TABLEPASS
+	item_state = "parahelmet"
+	armor = list(melee = 45, bullet = 15, laser = 50,energy = 10, bomb = 25, bio = 35, rad = 0)
+	flags_inv = HIDEEARS|HIDEEYES

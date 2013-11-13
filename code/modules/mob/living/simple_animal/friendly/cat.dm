@@ -62,7 +62,24 @@
 
 //RUNTIME IS ALIVE! SQUEEEEEEEE~
 /mob/living/simple_animal/cat/Runtime
-	name = "Runtime"
-	desc = "Its fur has the look and feel of velvet, and it's tail quivers occasionally."
+	name = "Happy Kitten"
+	desc = "Her fur has the look and feel of velvet, and her tail quivers occasionally. For some reason, staring at her makes the words \"terrible person.\""
 
+//PHEAR THE GHOSTKITTEH
+/mob/living/simple_animal/cat/ghost
+	name = "Ghostly cat"
+	desc = "Fear the ghost kitty."
+	icon_state = "ghostcat"
+	icon_living = "ghostcat"
+	response_help  = "tries to pet the"
+	response_disarm = "tries to push aside the"
+	response_harm   = "tries to kick the"
+
+//OMG ITS A KITTEN!
+/mob/living/simple_animal/cat/kitten
+	name = "Kitten"
+	desc = "It's sooo tiny and cute!"
+	icon_state = "kitty"
+	icon_living = "kitty"
+	icon_dead = "kitty_dead"
 

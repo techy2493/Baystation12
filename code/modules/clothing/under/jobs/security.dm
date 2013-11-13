@@ -142,3 +142,16 @@
 	item_state = "jensencoat"
 	flags_inv = 0
 	siemens_coefficient = 0.6
+
+/*
+ * Paramedic
+ */
+/obj/item/clothing/under/rank/paramedic
+	name = "security paramedic's uniform"
+	desc = "Made of no-stick material, great for those tough blood stains."
+	icon_state = "paramedic"
+	item_state = "r_suit"
+	#warn Hey, this thing here is color wtf is it for?
+	//color = "paramedic"
+	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
+	flags = FPRINT | TABLEPASS
