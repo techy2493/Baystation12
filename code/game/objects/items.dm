@@ -135,24 +135,26 @@
 	src.pickup(user)
 	add_fingerprint(user)
 	user.put_in_active_hand(src)
+	#warn Clone_Item stuff
 	var/mob/living/carbon/human/U = user
 	if(U.clone_item)
 		if(U.clone_item_c >= 10)
-		U << "<FONT COLOR=BLUE><B>You Feel Strong... You feel like you can hold things properly!</B></FONT>"
-		U.clone_item = 0
-		U.clone_item_c = 0
-		return
-	else if(prob(60))
-		U << "<FONT COLOR=RED><B>Your hands ache...</B></FONT>"
-		spawn(10)
-		U << "<B>You drop \the [src].</B>"
-		U.drop_item()
-		return
+			U << "<FONT COLOR=BLUE><B>You Feel Strong... You feel like you can hold things properly!</B></FONT>"
+			U.clone_item = 0
+			U.clone_item_c = 0
+			return
+		else if(prob(60))
+			U << "<FONT COLOR=RED><B>Your hands ache...</B></FONT>"
+			spawn(10)
+			U << "<B>You drop \the [src].</B>"
+			U.drop_item()
+			return
+		else
+			U << "<FONT COLOR=BLUE><B>You muster the strength to pickup \the [src].</B></FONT>"
+			U.clone_item_c += 1
+			return
 	else
-		U << "<FONT COLOR=BLUE><B>You muster the strength to pickup \the [src].</B></FONT>"
-		U.clone_item_c += 1
 		return
-	return
 
 
 /obj/item/attack_paw(mob/user as mob)

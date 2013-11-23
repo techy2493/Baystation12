@@ -140,6 +140,7 @@
 
 //Start growing a human clone in the pod!
 /obj/machinery/clonepod/proc/growclone(var/ckey, var/clonename, var/ui, var/se, var/mindref, var/datum/species/mrace)
+	/var/clonespecies
 	if(mess || attempting)
 		return 0
 	var/datum/mind/clonemind = locate(mindref)
@@ -157,6 +158,7 @@
 		for(var/mob/dead/observer/G in player_list)
 			if(G.ckey == ckey)
 				if(G.can_reenter_corpse)
+					clonespecies = G.get_species()
 					break
 				else
 					return 0
@@ -172,6 +174,7 @@
 
 	var/mob/living/carbon/human/H = new /mob/living/carbon/human(src)
 	occupant = H
+	H.set_species(clonespecies)
 
 	if(!clonename)	//to prevent null names
 		clonename = "clone ([rand(0,999)])"
