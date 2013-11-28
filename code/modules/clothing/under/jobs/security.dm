@@ -151,7 +151,6 @@
 	desc = "Made of no-stick material, great for those tough blood stains."
 	icon_state = "paramedic"
 	item_state = "r_suit"
-	#warn Hey, this thing here is color wtf is it for?
 	item_color = "paramedic"
 	armor = list(melee = 10, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 10, rad = 0)
 	flags = FPRINT | TABLEPASS

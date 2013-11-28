@@ -118,7 +118,7 @@ var/global/list/rad_collectors = list()
 		toggle_power()
 	else
 		update_icons()
-#warn Changed something here from 20 to 2 it might work? Right went 4.6 instead.
+
 /obj/machinery/power/rad_collector/proc/receive_pulse(var/pulse_strength)
 	if(P && active)
 		var/power_produced = 0

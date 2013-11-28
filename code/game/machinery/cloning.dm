@@ -68,16 +68,15 @@
 			selected = M
 			break
 	return selected
-//Stem Cell Stuff Items
 
-
+//Stem Cell Stuff - Items
 /obj/item/cloning/charge
 	name = "Stem Cell Container"
 	desc = "A container holding stem cells for the cloning process. WARNING! Do not shake!"
 	var/charges = 1
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "stem-charge"
-	#warn NEED DAT ICON UP DERE ^^
+
 
 /obj/item/cloning/charge/attack_self(mob/user)
 	playsound(src.loc, 'sound/effects/Glassbr3.ogg', 50, 0)

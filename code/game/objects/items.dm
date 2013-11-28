@@ -135,7 +135,6 @@
 	src.pickup(user)
 	add_fingerprint(user)
 	user.put_in_active_hand(src)
-	#warn Clone_Item stuff
 	var/mob/living/carbon/human/U = user
 	if(U.clone_item)
 		if(U.clone_item_c >= 10)

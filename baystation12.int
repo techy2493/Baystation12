@@ -1,11 +1,11 @@
 // BEGIN_INTERNALS
 /*
 MAP_ICON_TYPE: 0
-WINDOW: code\WorkInProgress\meteors.dm;code\global.dm;code\game\objects\items.dm;code\game\jobs\access.dm;code\game\jobs\job\captain.dm;code\game\jobs\job\security.dm;code\game\objects\items\devices\radio\headset.dm;code\modules\clothing\suits\labcoat.dm;code\modules\power\singularity\collector.dm;interface\interface.dm;code\controllers\configuration.dm;maps\tgstation2.dmm;code\modules\mob\language.dm;code\modules\admin\verbs\debug.dm;code\game\machinery\vending.dm;code\modules\economy\Accounts_DB.dm;code\modules\economy\Accounts.dm;code\game\jobs\job\civilian.dm;code\game\machinery\cloning.dm
+WINDOW: code\WorkInProgress\meteors.dm;code\global.dm;code\game\objects\items.dm;code\game\jobs\access.dm;code\game\jobs\job\captain.dm;code\game\jobs\job\security.dm;code\game\objects\items\devices\radio\headset.dm;code\modules\clothing\suits\labcoat.dm;code\modules\power\singularity\collector.dm;interface\interface.dm;code\controllers\configuration.dm;maps\tgstation2.dmm;code\modules\mob\language.dm;code\modules\admin\verbs\debug.dm;code\game\machinery\vending.dm;code\modules\economy\Accounts_DB.dm;code\modules\economy\Accounts.dm;code\game\jobs\job\civilian.dm;code\game\machinery\cloning.dm;code\modules\clothing\suits\miscellaneous.dm;code\modules\clothing\under\miscellaneous.dm;code\modules\clothing\under\jobs\security.dm;code\modules\paperwork\stamps.dm;code\modules\power\singularity\particle_accelerator\particle_control.dm
 LAST_COMPILE_VERSION: 501.1217
-DIR: code code\datums\diseases code\datums\diseases\advance code\datums\spells code\defines\obj code\game code\game\jobs code\game\jobs\job code\game\machinery code\game\objects code\game\objects\items code\game\objects\items\devices code\game\objects\items\devices\radio code\modules code\modules\admin code\modules\admin\verbs code\modules\clothing\suits code\modules\economy code\modules\mob\living code\modules\mob\living\carbon code\modules\mob\living\carbon\human code\modules\mob\living\carbon\metroid code\modules\power\singularity code\WorkInProgress interface maps maps\RandomZLevels nano 
-FILE: code\game\machinery\cloning.dm
-LAST_COMPILE_TIME: 1385598876
+DIR: code code\datums\diseases code\datums\diseases\advance code\datums\spells code\defines\obj code\game code\game\jobs code\game\jobs\job code\game\objects code\game\objects\items code\game\objects\items\devices code\game\objects\items\devices\radio code\modules code\modules\admin code\modules\admin\verbs code\modules\clothing code\modules\clothing\suits code\modules\clothing\under code\modules\clothing\under\jobs code\modules\economy code\modules\mob\living code\modules\mob\living\carbon code\modules\mob\living\carbon\human code\modules\mob\living\carbon\metroid code\modules\paperwork code\modules\power code\modules\power\singularity code\modules\power\singularity\particle_accelerator code\WorkInProgress interface maps maps\RandomZLevels nano 
+FILE: code\game\objects\items.dm
+LAST_COMPILE_TIME: 1385617241
 AUTO_FILE_DIR: OFF
 */
 // END_INTERNALS

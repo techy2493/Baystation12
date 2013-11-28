@@ -58,8 +58,7 @@
 	desc = "An expensive gray suit with black dress shirt and tie, perfect for upholding the law."
 	icon_state = "vice"
 	item_state = "gy_suit"
-	#warn Hey, this thing here is color wtf is it for?
-	//color = "vice"
+	item_color = "vice"
 
 /obj/item/clothing/under/rank/mailman
 	name = "mailman's jumpsuit"

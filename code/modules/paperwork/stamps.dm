@@ -17,8 +17,7 @@
 /obj/item/weapon/stamp/magistrate
 	name = "magistrate's rubber stamp"
 	icon_state = "stamp-hos"
-	#warn Hey, this thing here is color wtf is it for?
-	//color = "hosred"
+	item_color = "hosred"
 
 /obj/item/weapon/stamp/captain
 	name = "captain's rubber stamp"
