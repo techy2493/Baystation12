@@ -23,6 +23,13 @@
 		src << "\red The forum URL is not set in the server configuration."
 	return
 
+/client/verb/donate()
+	set name = "Donate"
+	set desc = "Donate to the server"
+	if (config.donateurl)
+		src << link(config.donateurl)
+	return
+
 #define RULES_FILE "config/rules.html"
 /client/verb/rules()
 	set name = "Rules"

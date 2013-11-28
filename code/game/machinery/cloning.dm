@@ -69,8 +69,7 @@
 			break
 	return selected
 //Stem Cell Stuff Items
-#warn StemCellStuff
-//TODO: Update Sprite For Cloning Charge
+
 
 /obj/item/cloning/charge
 	name = "Stem Cell Container"
@@ -85,7 +84,10 @@
 	for (var/mob/O in viewers(world.view, user))
 		O << "<B>[user]</B> is shaking \the [src], trying to determine if anything is inside."
 		spawn(10)
-		O << "<B>[user]</B> accidentally empties the contents of \the [src] all over the floor!"
+		if(src.charges > 0)
+			O << "<B>[user]</B> accidentally empties the contents of \the [src] all over the floor!"
+		else
+			O << "You don't hear anything except the latch jingling a little."
 	gibs(src.loc)
 	user << "That was stupid of you..."
 	user.drop_item()

@@ -26,14 +26,15 @@ var/global/list/rad_collectors = list()
 	..()
 
 /obj/machinery/power/rad_collector/process()
-	if(P)
-		if(P.air_contents.toxins <= 0)
-			investigate_log("<font color='red'>out of fuel</font>.","singulo")
-			P.air_contents.toxins = 0
-			eject()
-		else
-			P.air_contents.toxins -= 0.001*drainratio
 	return
+	//if(P)
+		//if(P.air_contents.toxins <= 0)
+		//	investigate_log("<font color='red'>out of fuel</font>.","singulo")
+		//	P.air_contents.toxins = 0
+		//	eject()
+		//else
+			//P.air_contents.toxins -= 0.001*drainratio
+	//return
 
 
 /obj/machinery/power/rad_collector/attack_hand(mob/user as mob)
@@ -117,7 +118,7 @@ var/global/list/rad_collectors = list()
 		toggle_power()
 	else
 		update_icons()
-
+#warn Changed something here from 20 to 2 it might work? Right went 4.6 instead.
 /obj/machinery/power/rad_collector/proc/receive_pulse(var/pulse_strength)
 	if(P && active)
 		var/power_produced = 0
@@ -126,6 +127,20 @@ var/global/list/rad_collectors = list()
 		last_power = power_produced
 		return
 	return
+
+
+	//if(P && active)
+	//	var/power_produced = 0
+//
+//		((pulse_strength*5)*toxins)*((co2+1)*.01)
+//		power_produced = (P.air_contents.toxins/((P.air_contents.carbon_dioxide+1)/100))*pulse_strength*5
+//		var/reactedgas = (pulse_strength*0.04)*(P.air_contents.carbon_dioxide*0.02)
+//		P.air_contents.toxins -= reactedgas
+//		P.air_contents.carbon_dioxide -= reactedgas
+//		add_avail(power_produced)
+//		last_power = power_produced
+//		return
+//	return
 
 
 /obj/machinery/power/rad_collector/proc/update_icons()

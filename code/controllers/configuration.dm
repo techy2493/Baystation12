@@ -65,6 +65,8 @@
 	var/limitalienplayers = 0
 	var/alien_to_human_ratio = 0.5
 
+	var/donateurl
+
 	var/server
 	var/banappeals
 	var/wikiurl
@@ -282,6 +284,9 @@
 
 				if ("norespawn")
 					config.respawn = 0
+
+				if ("donateurl")
+					config.donateurl = value
 
 				if ("servername")
 					config.server_name = value
