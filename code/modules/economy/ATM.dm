@@ -1,3 +1,4 @@
+#ifdef MONEY
 /*
 
 TODO:
@@ -363,3 +364,4 @@ log transactions
 					T.date = current_date_string
 					T.time = worldtime2text()
 					authenticated_account.transaction_log.Add(T)
+#endif

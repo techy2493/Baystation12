@@ -1,4 +1,4 @@
-
+#ifdef MONEY
 /datum/event/economic_event
 	endWhen = 50			//this will be set randomly, later
 	announceWhen = 15
@@ -103,3 +103,4 @@
 		affected_dest.temp_price_change[good_type] = 1
 	for(var/good_type in cheaper_goods)
 		affected_dest.temp_price_change[good_type] = 1
+#endif

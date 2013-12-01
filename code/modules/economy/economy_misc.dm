@@ -1,4 +1,4 @@
-
+#ifdef MONEY
 #define RIOTS 1
 #define WILD_ANIMAL_ATTACK 2
 #define INDUSTRIAL_ACCIDENT 3
@@ -154,3 +154,4 @@ var/global/economy_init = 0
 	all_money_accounts.Add(department_account)
 
 	department_accounts[department] = department_account
+#endif

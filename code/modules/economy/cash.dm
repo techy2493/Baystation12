@@ -1,3 +1,4 @@
+#ifdef MONEY
 /obj/item/weapon/spacecash
 	name = "0 credit chip"
 	desc = "It's worth 0 credits."
@@ -72,3 +73,4 @@ proc/spawn_money(var/sum, spawnloc)
 			sum -= i
 			new cash_type(spawnloc)
 	return
+#endif

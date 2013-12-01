@@ -1,3 +1,4 @@
+#ifdef MONEY
 var/list/station_departments = list("Command", "Medical", "Engineering", "Science", "Security", "Cargo", "Civilian")
 
 // The department the job belongs to.
@@ -68,3 +69,4 @@ var/list/station_departments = list("Command", "Medical", "Engineering", "Scienc
 /datum/job/detective/department = "Security"
 
 /datum/job/officer/department = "Security"
+#endif

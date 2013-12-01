@@ -145,12 +145,15 @@
 		coin = W
 		user << "\blue You insert the [W] into the [src]"
 		return
+		#ifdef MONEY
 	else if(istype(W, /obj/item/weapon/card) && currently_vending)
 		var/obj/item/weapon/card/I = W
 		scan_card(I)
+		#endif
 	else
 		..()
 
+#ifdef MONEY
 /obj/machinery/vending/proc/scan_card(var/obj/item/weapon/card/I)
 	if(!currently_vending) return
 	if (istype(I, /obj/item/weapon/card/id))
@@ -199,6 +202,8 @@
 	else
 		usr << "\icon[src]<span class='warning'>Unable to access vendor account. Please record the machine ID and call CentComm Support.</span>"
 
+#endif
+
 /obj/machinery/vending/attack_paw(mob/user as mob)
 	return attack_hand(user)
 
@@ -216,6 +221,7 @@
 
 	var/vendorname = (src.name)  //import the machine's name
 
+	#ifdef MONEY
 	if(src.currently_vending)
 		var/dat = "<TT><center><b>[vendorname]</b></center><hr /><br>" //display the name, and added a horizontal rule
 		dat += "<b>You have selected [currently_vending.product_name].<br>Please swipe your ID to pay for the article.</b><br>"
@@ -223,6 +229,7 @@
 		user << browse(dat, "window=vending")
 		onclose(user, "")
 		return
+	#endif
 
 	var/dat = "<TT><center><b>[vendorname]</b></center><hr /><br>" //display the name, and added a horizontal rule
 	dat += "<b>Select an item: </b><br><br>" //the rest is just general spacing and bolding
@@ -244,8 +251,10 @@
 		for (var/datum/data/vending_product/R in display_records)
 			dat += "<FONT color = '[R.display_color]'><B>[R.product_name]</B>:"
 			dat += " <b>[R.amount]</b> </font>"
+			#ifdef MONEY
 			if(R.price)
 				dat += " <b>(Price: [R.price])</b>"
+			#endif
 			if (R.amount > 0)
 				dat += " <a href='byond://?src=\ref[src];vend=\ref[R]'>(Vend)</A>"
 			else
@@ -306,7 +315,6 @@
 	if ((usr.contents.Find(src) || (in_range(src, usr) && istype(src.loc, /turf))))
 		usr.set_machine(src)
 		if ((href_list["vend"]) && (src.vend_ready) && (!currently_vending))
-
 			if(istype(usr,/mob/living/silicon))
 				if(istype(usr,/mob/living/silicon/robot))
 					var/mob/living/silicon/robot/R = usr
@@ -325,13 +333,16 @@
 			var/datum/data/vending_product/R = locate(href_list["vend"])
 			if (!R || !istype(R) || !R.product_path || R.amount <= 0)
 				return
-
+			#ifdef MONEY
 			if(R.price == null)
 				src.vend(R, usr)
 			else
 				src.currently_vending = R
 				src.updateUsrDialog()
-
+			#endif
+			#ifndef MONEY
+			src.vend(R, usr)
+			#endif
 			return
 
 		else if (href_list["cancel_buying"])

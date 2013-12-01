@@ -1,4 +1,4 @@
-
+#ifdef MONEY
 var/list/weighted_randomevent_locations = list()
 var/list/weighted_mundaneevent_locations = list()
 
@@ -108,3 +108,4 @@ var/list/weighted_mundaneevent_locations = list()
 	willing_to_sell = list()
 	viable_random_events = list(WILD_ANIMAL_ATTACK, CULT_CELL_REVEALED, FESTIVAL, MOURNING, ANIMAL_RIGHTS_RAID, ALIEN_RAIDERS)
 	viable_mundane_events = list(ELECTION, TOURISM, BIG_GAME_HUNTERS, RESIGNATION)
+#endif

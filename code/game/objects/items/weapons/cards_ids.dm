@@ -75,7 +75,9 @@
 		/obj/item/weapon/storage/lockbox,
 		/obj/item/weapon/storage/secure,
 		/obj/item/weapon/circuitboard,
+		#ifdef MONEY
 		/obj/item/device/eftpos,
+		#endif
 		/obj/item/device/lightreplacer,
 		/obj/item/device/taperecorder,
 		/obj/item/device/hailer,

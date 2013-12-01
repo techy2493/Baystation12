@@ -65,7 +65,9 @@ datum/controller/game_controller/proc/setup()
 	setup_objects()
 	setupgenetics()
 	setupfactions()
+	#ifdef MONEY
 	setup_economy()
+	#endif
 
 	for(var/i=0, i<max_secret_rooms, i++)
 		make_mining_asteroid_secret()
@@ -196,7 +198,7 @@ datum/controller/game_controller/proc/process()
 				timer = world.timeofday
 				process_nano()
 				nano_cost = (world.timeofday - timer) / 10
-				
+
 				sleep(breather_ticks)
 
 				//EVENTS

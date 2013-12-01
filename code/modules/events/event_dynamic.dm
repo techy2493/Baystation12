@@ -44,15 +44,16 @@ var/list/event_last_fired = list()
 	//see:
 	// Code/WorkInProgress/Cael_Aislinn/Economy/Economy_Events.dm
 	// Code/WorkInProgress/Cael_Aislinn/Economy/Economy_Events_Mundane.dm
+
+#ifdef MONEY
 	possibleEvents[/datum/event/economic_event] = 200
 	possibleEvents[/datum/event/trivial_news] = 300
 	possibleEvents[/datum/event/mundane_news] = 200
-
 	possibleEvents[/datum/event/pda_spam] = max(min(25, player_list.len) * 4, 200)
 	possibleEvents[/datum/event/money_lotto] = max(min(5, player_list.len), 50)
 	if(account_hack_attempted)
 		possibleEvents[/datum/event/money_hacker] = max(min(25, player_list.len) * 4, 200)
-
+#endif
 	possibleEvents[/datum/event/carp_migration] = 50 + 50 * active_with_role["Engineer"]
 	possibleEvents[/datum/event/brand_intelligence] = 50 + 25 * active_with_role["Janitor"]
 

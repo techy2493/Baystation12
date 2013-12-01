@@ -366,7 +366,7 @@ var/global/datum/controller/occupations/job_master
 				S = locate("start*[rank]") // use old stype
 			if(istype(S, /obj/effect/landmark/start) && istype(S.loc, /turf))
 				H.loc = S.loc
-
+		#ifdef MONEY
 		//give them an account in the station database
 		var/datum/money_account/M = create_account(H.real_name, rand(50,500)*10, null)
 		if(H.mind)
@@ -374,7 +374,6 @@ var/global/datum/controller/occupations/job_master
 			remembered_info += "<b>Your account number is:</b> #[M.account_number]<br>"
 			remembered_info += "<b>Your account pin is:</b> [M.remote_access_pin]<br>"
 			remembered_info += "<b>Your account funds are:</b> $[M.money]<br>"
-
 			if(M.transaction_log.len)
 				var/datum/transaction/T = M.transaction_log[1]
 				remembered_info += "<b>Your account was created:</b> [T.time], [T.date] at [T.source_terminal]<br>"
@@ -396,7 +395,7 @@ var/global/datum/controller/occupations/job_master
 
 		spawn(0)
 			H << "\blue<b>Your account number is: [M.account_number], your account pin is: [M.remote_access_pin]</b>"
-
+		#endif
 		var/alt_title = null
 		if(H.mind)
 			H.mind.assigned_role = rank
@@ -465,11 +464,11 @@ var/global/datum/controller/occupations/job_master
 			C.rank = rank
 			C.assignment = title ? title : rank
 			C.name = "[C.registered_name]'s ID Card ([C.assignment])"
-
+			#ifdef MONEY
 			//put the player's account number onto the ID
 			if(H.mind && H.mind.initial_account)
 				C.associated_account_number = H.mind.initial_account.account_number
-
+			#endif
 			H.equip_to_slot_or_del(C, slot_wear_id)
 
 		H.equip_to_slot_or_del(new /obj/item/device/pda(H), slot_belt)

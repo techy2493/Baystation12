@@ -1,4 +1,4 @@
-
+#ifdef MONEY
 /obj/machinery/account_database
 	name = "Accounts uplink console"
 	desc = "Access transaction logs, account data and all kinds of other financial records."
@@ -167,3 +167,4 @@
 				creating_new_account = 0
 
 	src.attack_hand(usr)
+#endif

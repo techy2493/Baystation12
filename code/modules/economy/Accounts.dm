@@ -1,4 +1,4 @@
-
+#ifdef MONEY
 /datum/money_account
 	var/owner_name = ""
 	var/account_number = 0
@@ -111,3 +111,4 @@
 	for(var/datum/money_account/D in all_money_accounts)
 		if(D.account_number == account_number)
 			return D
+#endif

@@ -1,3 +1,4 @@
+#ifdef MONEY
 /datum/event/pda_spam
 	endWhen = 6000
 	var/time_failed = 0
@@ -113,3 +114,4 @@
 	else if(world.time > time_failed + 1200)
 		//if there's no server active for two minutes, give up
 		kill()
+#endif

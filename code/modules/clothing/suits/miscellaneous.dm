@@ -90,7 +90,13 @@
 	item_state = "judge"
 	flags = FPRINT | TABLEPASS
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+	#ifdef MONEY
 	allowed = list(/obj/item/weapon/storage/fancy/cigarettes,/obj/item/weapon/spacecash)
+	#endif
+
+	#ifndef MONEY
+	allowed = list(/obj/item/weapon/storage/fancy/cigarettes)
+	#endif
 	flags_inv = HIDEJUMPSUIT
 
 

@@ -908,7 +908,7 @@
 		spawn(5) //Workaround to keep harvesting from working weirdly.
 			del(src)
 */
-
+#ifdef MONEY
 //This object is just a transition object. All it does is make dosh and delete itself. -Cheridan
 /obj/item/weapon/reagent_containers/food/snacks/grown/money
 	seed = "/obj/item/seeds/cashseed"
@@ -936,6 +936,7 @@
 				new/obj/item/weapon/spacecash/c1000(src.loc)
 		spawn(5) //Workaround to keep harvesting from working weirdly.
 			del(src)
+#endif
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/bluespacetomato
 	seed = "/obj/item/seeds/bluespacetomatoseed"

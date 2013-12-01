@@ -57,7 +57,12 @@ RSF
 		return
 	if (mode == 6)
 		mode = 1
+		#ifdef MONEY
 		user << "Changed dispensing mode to 'Dosh'"
+		#endif
+		#ifndef MONEY
+		user << "Activated Safety - Dispensing mode off."
+		#endif
 		return
 	// Change mode
 
@@ -65,7 +70,12 @@ RSF
 	if(!proximity) return
 	if (!(istype(A, /obj/structure/table) || istype(A, /turf/simulated/floor)))
 		return
+	#ifndef MONEY
+	if(mode == 1)
+		user << "*Click*"
 
+	#endif
+	#ifdef MONEY
 	if (istype(A, /obj/structure/table) && mode == 1)
 		if (istype(A, /obj/structure/table) && matter >= 1)
 			user << "Dispensing Dosh..."
@@ -93,7 +103,7 @@ RSF
 				user << "The RSF now holds [matter]/30 fabrication-units."
 				desc = "A RSF. It currently holds [matter]/30 fabrication-units."
 		return
-
+	#endif
 	else if (istype(A, /obj/structure/table) && mode == 2)
 		if (istype(A, /obj/structure/table) && matter >= 1)
 			user << "Dispensing Drinking Glass..."

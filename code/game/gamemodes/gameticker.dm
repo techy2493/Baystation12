@@ -133,7 +133,9 @@ var/global/datum/controller/gameticker/ticker
 
 
 	//here to initialize the random events nicely at round start
+	#ifdef MONEY
 	setup_economy()
+	#endif
 
 	spawn(0)//Forking here so we dont have to wait for this to finish
 		mode.post_setup()

@@ -8,7 +8,7 @@ send money to people (might be worth attaching money to custom database thing fo
 log transactions
 
 */
-
+#ifdef MONEY
 /obj/machinery/atm
 	name = "\improper NanoTrasen Automatic Teller Machine"
 	desc = "For all your monetary needs!"
@@ -174,3 +174,5 @@ log transactions
 		return 1
 	user << "\red Access denied"
 	return 0
+
+#endif

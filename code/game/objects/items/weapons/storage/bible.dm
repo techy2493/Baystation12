@@ -18,9 +18,11 @@
 	..()
 	new /obj/item/weapon/reagent_containers/food/drinks/beer(src)
 	new /obj/item/weapon/reagent_containers/food/drinks/beer(src)
+	#ifdef MONEY
 	new /obj/item/weapon/spacecash(src)
 	new /obj/item/weapon/spacecash(src)
 	new /obj/item/weapon/spacecash(src)
+	#endif
 //BS12 EDIT
 /* // All cult functionality moved to Null Rod
 /obj/item/weapon/storage/bible/proc/bless(mob/living/carbon/M as mob)

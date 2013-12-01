@@ -1,3 +1,4 @@
+#ifdef MONEY
 /datum/event/money_lotto
 	var/winner_name = "John Smith"
 	var/winner_sum = 0
@@ -38,3 +39,4 @@
 
 	for(var/obj/machinery/newscaster/NEWSCASTER in allCasters)
 		NEWSCASTER.newsAlert("Tau Ceti Daily")
+#endif

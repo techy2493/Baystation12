@@ -1,3 +1,4 @@
+#ifdef MONEY
 /obj/item/device/eftpos
 	name = "EFTPOS scanner"
 	desc = "Swipe your ID card to make purchases electronically."
@@ -238,3 +239,4 @@
 		..()
 
 	//emag?
+#endif

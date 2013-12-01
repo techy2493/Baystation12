@@ -1,3 +1,4 @@
+#ifdef MONEY
 /var/global/account_hack_attempted = 0
 
 /datum/event/money_hacker
@@ -104,3 +105,4 @@
 					for (var/mob/O in hearers(5, Console.loc))
 						O.show_message(text("\icon[Console] *The Requests Console beeps: 'PRIORITY Alert in [my_department]'"))
 				Console.messages += "<B><FONT color='red'>High Priority message from [my_department]</FONT></B><BR>[sending]"
+#endif

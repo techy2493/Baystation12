@@ -1,4 +1,4 @@
-
+#ifdef MONEY
 /datum/event/mundane_news
 	endWhen = 10
 
@@ -231,3 +231,4 @@
 			break
 	for(var/obj/machinery/newscaster/NEWSCASTER in allCasters)
 		NEWSCASTER.newsAlert("The Gibson Gazette")
+#endif

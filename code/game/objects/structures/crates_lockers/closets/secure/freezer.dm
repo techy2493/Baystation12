@@ -82,7 +82,7 @@
 	icon_off = "fridge1"
 	req_access = list(access_heads_vault)
 
-
+#ifdef MONEY
 	New()
 		..()
 		sleep(2)
@@ -94,10 +94,17 @@
 			new /obj/item/weapon/spacecash/c200(src)
 		return
 
+#endif
 
-
-
-
-
-
-
+#ifndef MONEY
+	New()
+		..()
+		sleep(2)
+		for(var/i = 0, i < 3, i++)
+			new /obj/item/weapon/coin/silver(src)
+		for(var/i = 0, i < 5, i++)
+			new /obj/item/weapon/coin/silver(src)
+		for(var/i = 0, i < 6, i++)
+			new /obj/item/weapon/coin/silver(src)
+		return
+#endif
